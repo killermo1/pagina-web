@@ -2,14 +2,14 @@
 {
     --blanco: #ffffff;
     --oscuro: #212121;
-    --primario: #FFC107;
-    --secundario: #0097a7;
+    --primario: #009dcc;
+    --secundario: #006280;
     --gris: #757575;
 
     --fuente-principal: 1.6rem;
 }
 
-*
+*, *:before, *:after
 {
     box-sizing: border-box;
     margin: 0;
@@ -19,6 +19,7 @@
 html
 {
     font-size: 62.5%;
+    
 }
 
 body
@@ -27,20 +28,126 @@ body
     font-family: 'Krub', sans-serif;
 }
 
-.title
+h1
 {
+    font-size: 3.8rem;
     text-align: center;
-    font-family: 'Krub', sans-serif;
     font-weight: normal;
 }
+
+h2
+{
+    font-size: 2.8rem;
+}
+
+h3
+{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3
+{
+    text-align: center;
+}
+
 .title span
 {
     font-size: 2rem;
 
 }
-.title2 span
+
+
+
+
+.container
 {
-    font-size: 1.5rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    
+}
+
+.nav-bag
+{
+    background-color: var(--secundario);
+}
+
+.container-nav
+{
+    background-color: var(--secundario);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .container-nav
+    {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.container-nav a
+{
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.container-nav a:hover
+{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.hero
+{
+    background-image: url(./imagenes/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 430px;
+    padding: 20px;
+    position: relative;
+}
+
+.contenido-hero
+{
+   position: absolute;
+   background-color: rgba(0, 0, 0 , 0.6);
+   right: 0;
+   bottom: 0;
+   left: 0;
+   top: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p
+{
+    color: var(--blanco);
+}
+
+.posicionamiento
+{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.boton
+{
+    padding: 1rem;
+    background-color: var(--secundario);
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    
 }
 
 
