@@ -1,4 +1,4 @@
-:root
+:root /* esto es para crear una variable con la paleta de colores*/
 {
     --blanco: #ffffff;
     --oscuro: #212121;
@@ -9,7 +9,7 @@
     --fuente-principal: 1.6rem;
 }
 
-*, *:before, *:after
+*, *:before, *:after /*para borrar los estilos que vienen por defecto*/
 {
     box-sizing: border-box;
     margin: 0;
@@ -19,66 +19,68 @@
 html
 {
     font-size: 62.5%;
-    
+    scroll-snap-type:y mandatory;
 }
 
-body
+body /*le asigne el tipo de fueten y el tamña de letra que tenga toda mi pagina
+utilice background-image para darle un degradado al fondo*/
 {
     font-size: var(--fuente-principal);
     font-family: 'Krub', sans-serif;
-}
+    background-image: linear-gradient(to bottom,#9ad8eb 0%, #f1ebeb 10%)
+}    
 
-h1
+h1 /*le di un tamaño al h1 y lo centre y le puse unos margenes*/
 {
     font-size: 3.8rem;
     text-align: center;
     font-weight: normal;
+    margin: 5rem 0;
 }
 
-h2
+h2 /*le puse otro tamñao de letra a todos los h2*/
 {
     font-size: 2.8rem;
 }
 
-h3
+h3 /*le puse un tamaño de letra a todos los h3*/
 {
     font-size: 1.8rem;
 }
 
-h1,h2,h3
+h1,h2,h3 /*centre todo el texto del h1 al h3*/
 {
     text-align: center;
 }
 
-.title span
+.title span /*le puse un tamaño especifico a la etiqueta span que esta en el h1*/
 {
     font-size: 2rem;
 
 }
 
 
-
-
-.container
-{
-    max-width: 100rem;
-    margin: 0 auto;
-    
-}
-
-.nav-bag
+.nav-bag/*este es el container que esta detras del menu de navegacion le puse el mismo color para que completara toda la pantalla*/
 {
     background-color: var(--secundario);
 }
 
-.container-nav
+.container/*le puse que tuviera un espacio maximo de 1000px a mi contenedor de navegacion utilice el margin para centrar*/ 
+{
+   max-width: 120rem;
+    margin: 0 auto;
+    
+}
+
+.container-nav/*al background del menu de navegacion le puse un color le cambie el display para que se vean en columnas*/
 {
     background-color: var(--secundario);
     display: flex;
     flex-direction: column;
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 768px) {/*cree este media query para que el menu de navegacion se ponga una frente al otro cuando llegue a los 768px*/
     .container-nav
     {
         flex-direction: row;
@@ -86,23 +88,23 @@ h1,h2,h3
     }
 }
 
-.container-nav a
+.container-nav a /*este es cada link de navegacion le di un estilo para que asi tuviera mas altura y le puse un display block para que ocupe todo el espacio cuando este en la pantlla de un movil*/
 {
     color: var(--blanco);
     text-decoration: none;
     font-weight: bold;
-    padding: 1rem;
+    padding: 2rem;
     display: block;
     text-align: center;
 }
 
-.container-nav a:hover
+.container-nav a:hover/*le puse esta pseudo clase para que cuando señale el elemento cambide de color el fondo y la letra*/
 {
     background-color: var(--primario);
     color: var(--oscuro);
 }
 
-.hero
+.hero/*aqui agregue una imagen de fondo utilice no-repeat para que no se repita la imagen cover para que la imagen ocupara todo el ancho le puse un altura para que fuera mas larga le puse una posicion relative para poder crearle un filtro*/
 {
     background-image: url(./imagenes/hero.jpg);
     background-repeat: no-repeat;
@@ -110,9 +112,12 @@ h1,h2,h3
     height: 430px;
     padding: 20px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
-.contenido-hero
+.contenido-hero/*le puse una pocision adsoluta para que tome de referencia todo el contenedor y no lo que esta afuera 
+le puse un color negro con menos opacidad para crear un filtro utilice las cordenadas para que tomaran todo el ancho del documento
+y los elementos que estan dentro de el les puse un display flex para que estuvieran en columna y los centre tanto vertical como horizontal*/
 {
    position: absolute;
    background-color: rgba(0, 0, 0 , 0.6);
@@ -124,6 +129,36 @@ h1,h2,h3
    flex-direction: column;
    align-items: center;
    justify-content: center;
+}
+
+.boton/*cree un boton con un ancho de 90% cuando se vea desde un telefono y le puse otros estilos
+*/
+{
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {/*cree este media query para cuando se vea en un computador reiniciar el ancho 
+    y que se vea mas pequeño*/
+    .boton
+    {
+        width: auto;
+    }
+}
+
+.boton:hover
+{
+    cursor: pointer;
 }
 
 .contenido-hero h2,
@@ -139,15 +174,179 @@ h1,h2,h3
   align-items: flex-end;
 }
 
-.boton
+.contenido-hero h2
 {
-    padding: 1rem;
-    background-color: var(--secundario);
-    color: var(--blanco);
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    
+    position: relative;
+    bottom: 6rem;
+}
+
+.sombra/*agregue una sombre al backgraund de mi main le agregue un apdding para que tenga un a separacion interior*/
+{
+    -webkit-box-shadow: 0px 5px 15px 2px rgba(133,128,133,0.64);
+    -moz-box-shadow: 0px 5px 15px 2px rgba(133,128,133,0.64);
+    box-shadow: 0px 5px 15px 2px rgba(133,128,133,0.64);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+@media (min-width: 768px) {/*agregue este media query para que cuando se vea en un peso se pongan en 3 columnas*/
+    .servicios
+{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem; 
+    margin-top: 2rem;
+}
+
+   
+}
+
+.position
+   {
+       margin-top: 1rem;
+   }
+
+
+.servicios
+{
+    margin: 2rem;
+}
+
+.container,.container-nav,.formulario
+{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.servicios_items
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicios_items h3
+{
+  color: var(--secundario);
+  font-weight: normal;
+  
+}
+
+.iconos
+{
+    margin-top: 1rem;
+    height: 10rem;
+    width: 10rem;
+    background-color: #ff9300;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.servicios_items p
+{
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+/* contacto */
+.formulario
+{
+  background-color: var(--gris);
+  width: min(60rem, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset
+{
+    border: none;
+}
+
+.formulario legend
+{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ff9300;
+}
+
+@media (min-width: 768px) {
+    .contenedor_campos
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    grid-template-rows: auto auto 20rem;
+}
+    .campo:nth-child(3),
+    .campo:nth-child(4)
+    {
+        grid-column: 1 / 3;
+    }
 }
 
 
+.campo
+{
+  margin-bottom: 1rem;
+}
+
+.campo label
+{
+  color: var(--blanco);
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+
+.input-text
+{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.tamaño
+{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .tamaño
+    {
+        width: auto;
+    }
+}
+
+.flex
+{
+    display: flex;
+}
+
+.alinear-derecha
+{
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.campo textarea
+{
+    height: 20rem;
+}
+
+/* footer */
+.footer
+{
+    text-align: center;
+    margin: 1rem;
+    font-size: large;
+}
